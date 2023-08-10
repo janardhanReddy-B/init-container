@@ -1,8 +1,6 @@
-FROM        centos:7
-RUN         yum install epel-release -y
-RUN         yum install git -y
-ADD         https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo /etc/yum.repos.d/mongodb.repo
-RUN         yum install mongodb-org-shell -y
-RUN         yum install mysql -y
+FROM        dokken/centos-8
+RUN         yum install epel-release git -y
+COPY        mongo.repo /etc/yum.repos.d/mongo.repo
+RUN         yum install mysql mongodb-org-shell -y
 COPY        run.sh /
 ENTRYPOINT  ["bash", "/run.sh"]
