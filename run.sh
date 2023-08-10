@@ -15,5 +15,5 @@ fi
 
 if [ "$dbtype" == "mongo" ]; then
   curl -L -O https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
-  mongo --ssl --host docdb-prod.cluster-cajpnbnycbmh.us-east-1.docdb.amazonaws.com:27017 --sslCAFile rds-combined-ca-bundle.pem --username roboshop --password roboshop123 < catalogue.js
+  mongo --ssl --host docdb-prod.cluster-cajpnbnycbmh.us-east-1.docdb.amazonaws.com:27017 --sslCAFile /app/rds-combined-ca-bundle.pem --username roboshop --password roboshop123 < catalogue.js
 fi
