@@ -1,5 +1,7 @@
 @Library('roboshop') _
 
-env.component = "init-container"
 
-docker()
+env.COMPONENT = "init-container"
+env.REPO_URL = "https://github.com/janardhanReddy-B/init-container"
+
+docker_init()
