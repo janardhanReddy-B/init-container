@@ -8,9 +8,9 @@ fi
 git clone https://github.com/janardhanReddy-B/$component
 cd $component/schema
 
-if [ "$dbtype" == "mysql" ]; then
+if [ "mysql" == "mysql" ]; then
   echo "GRANT ALL ON cities.* TO 'shipping'@'%' IDENTIFIED BY 'secret';" | mysql -h $dbhost -u$dbuser -p$dbpass
-  mysql -h $dbhost -u$dbuser -p$dbpass <$component.sql
+  mysql -h $dbhost -u$dbuser -p$dbpass <shipping.sql
 fi
 
 if [ "$dbtype" == "mongo" ]; then
