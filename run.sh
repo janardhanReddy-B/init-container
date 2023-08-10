@@ -8,7 +8,7 @@ fi
 git clone https://github.com/janardhanReddy-B/shipping
 cd shipping/schema
 
-if [ "mysql" == "mysql" ]; then
+if [ "shipping" == "mysql" ]; then
   echo "GRANT ALL ON cities.* TO 'shipping'@'%' IDENTIFIED BY 'secret';" | mysql -h rds-prod.cluster-cajpnbnycbmh.us-east-1.rds.amazonaws.com -uroboshop -proboshop123 <shipping.sql
   mysql -h rds-prod.cluster-cajpnbnycbmh.us-east-1.rds.amazonaws.com -uroboshop -proboshop123 <shipping.sql
 fi
