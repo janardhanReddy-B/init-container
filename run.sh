@@ -15,5 +15,5 @@ fi
 
 if [ "$dbtype" == "mongo" ]; then
   curl -L -O https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
-  mongo --ssl --host $dbhost:27017 --sslCAFile rds-combined-ca-bundle.pem --username $dbuser --password $dbpass < $component.js
+  mongo --ssl --host docdb-prod.cluster-cajpnbnycbmh.us-east-1.docdb.amazonaws.com:27017 --sslCAFile rds-combined-ca-bundle.pem --username $dbuser --password $dbpass < $component.js
 fi
