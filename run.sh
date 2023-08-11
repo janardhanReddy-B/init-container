@@ -8,8 +8,8 @@ fi
 if [ "$dbtype" == "mysql" ]; then
   git clone https://github.com/janardhanReddy-B/shipping
   cd shipping/schema
-  echo "GRANT ALL ON cities.* TO 'shipping'@'%' IDENTIFIED BY 'secret';" | mysql -h $dbhost -u$dbuser -p$dbpass
-  mysql -h $dbhost -u$dbuser -p$dbpass <shipping.sql
+  echo "GRANT ALL ON cities.* TO 'shipping'@'%' IDENTIFIED BY 'secret';" | mysql -h prod-rds.cluster-cajpnbnycbmh.us-east-1.rds.amazonaws.com -u$dbuser -p$dbpass
+  mysql -h prod-rds.cluster-cajpnbnycbmh.us-east-1.rds.amazonaws.com -u$dbuser -p$dbpass <shipping.sql
 fi
 
 if [ "$dbtype" == "mongo" ]; then
