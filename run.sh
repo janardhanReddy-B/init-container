@@ -13,8 +13,8 @@ if [ "$dbtype" == "mysql" ]; then
 fi
 
 if [ "$dbtype" == "mongo" ]; then
-  git clone https://github.com/janardhanReddy-B/$component
-  cd $component/schema
-  curl -L -O https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
-  mongo --ssl --host $dbhost:27017 --sslCAFile rds-combined-ca-bundle.pem --username $dbuser --password $dbpass < $component.js
+  git clone https://github.com/janardhanReddy-B/catalogue
+  cd catalogue/schema
+  curl -L -O https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+  mongo --ssl --host prod-docdb.cluster-cajpnbnycbmh.us-east-1.docdb.amazonaws.com:27017 --sslCAFile global-bundle.pem --username roboshop --password roboshop123 <catalogue.js
 fi
