@@ -14,7 +14,7 @@ fi
 
 if [ "$dbtype" == "mongo" ]; then
   git clone https://github.com/janardhanReddy-B/$component
-  cd component/schema
+  cd $component/schema
   curl -L -O https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
   mongo --ssl --host prod-docdb.cluster-cajpnbnycbmh.us-east-1.docdb.amazonaws.com:27017 --sslCAFile global-bundle.pem --username $dbuser --password $dbpass3 < $component.js
 fi
